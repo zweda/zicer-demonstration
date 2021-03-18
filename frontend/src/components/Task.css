@@ -1,0 +1,75 @@
+.task-container {
+    height: 150px;
+    width: 200px;
+    background-color: #3b945e;
+    border-radius: 8px;
+    padding: 6px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: inherit;
+}
+
+.task-info {
+    max-width: calc(100% - 20px);
+}
+
+.task-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 5px;
+    font-size: large;
+    font-weight: 600;
+
+}
+
+.task-description {
+    overflow-wrap: break-word;
+    overflow-y: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    padding: 5px;
+    max-height: calc(100% - 34px - 12px);
+    font-size: smaller;
+    font-style: italic;
+}
+
+.custom-control-input-green:focus~.custom-control-label::before {
+    border-color: #28a745 !important;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25) !important;
+}
+  
+.custom-control-input-green:checked~.custom-control-label::before {
+    border-color: #28a745 !important;
+    background-color: #28a745 !important;
+}
+  
+.custom-control-input-green:focus:not(:checked)~.custom-control-label::before {
+    border-color: #5bd778 !important;
+}
+  
+.custom-control-input-green:not(:disabled):active~.custom-control-label::before {
+    background-color: #86bf93 !important;
+    border-color: #d6f5dd !important;
+}
+
+.task-enter,
+.task-appear {
+    opacity: 0.01;
+}
+
+.task-enter-active,
+.task-appear-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+
+.task-exit {
+    opacity: 1;
+}
+
+.task-exit.task-exit-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+}
+

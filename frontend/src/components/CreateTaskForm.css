@@ -1,0 +1,27 @@
+.task-form {
+    margin-top: 2em;
+    display: flex;
+}
+
+.form-group {
+    min-width: 50vw;
+    margin-right: 1em;
+}
+
+.form-group > input {
+    margin-bottom: 1em;
+}
+
+.form-group > input,
+.form-group > textarea {
+    border-radius: 20px;
+    box-shadow: #3b945e;
+}
+
+
+.task-form > input {
+    border-radius: 20px;
+    height: 20%;
+    background-color: #3b945e;
+    border: 2px solid #3b945e;
+}

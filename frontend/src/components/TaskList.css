@@ -1,0 +1,12 @@
+.task-list {
+    min-width: 50vw;
+    min-height: 20em;
+    margin: 2em 0;
+    padding: 2em;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px;
+    gap: 40px;
+    background-color: #65ccb8;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
