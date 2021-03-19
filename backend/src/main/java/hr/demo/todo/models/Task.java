@@ -23,7 +23,7 @@ public class Task {
     @Enumerated(EnumType.STRING)
     private Archived archived = Archived.NO;
 
-    Task() {
+    public Task() {
 
     }
 
@@ -48,6 +48,10 @@ public class Task {
 
     public Archived getArchived() {
         return archived;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setTitle(String title) {

@@ -8,18 +8,17 @@ class TaskList extends Component {
     renderTasks = () => {
         return this.props.data.map((task, index) => {
             return (<CSSTransition
-                    key={task.name}
+                    key={task.id}
                     appear={true}
                     classNames="task"
                     timeout={{ enter: 500, exit: 300 }}
                     >
-                        <Task index={index} task={task} removeTask={this.props.handleRemove}/>
+                        <Task id={task.id} task={task} removeTask={this.props.handleRemove}/>
                     </CSSTransition>)
         })
     }
 
     render = () => {
-        console.log(this.props)
         return (
             <TransitionGroup className="task-list">
                 {this.renderTasks()}

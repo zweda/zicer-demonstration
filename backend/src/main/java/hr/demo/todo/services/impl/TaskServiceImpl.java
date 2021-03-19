@@ -21,7 +21,7 @@ public class TaskServiceImpl implements TaskService {
     public Task createTask(Task task) {
         Assert.notNull(task, "Object cannot be empty");
         Assert.isNull(task.getId(), "Id must be null otherwise it could update wrong entry!");
-
+        System.out.println(task.getTitle());
         task.setArchived(Task.Archived.NO);
         return taskRepo.save(task);
     }

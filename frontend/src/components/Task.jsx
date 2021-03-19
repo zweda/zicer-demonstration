@@ -4,18 +4,17 @@ import './Task.css';
 class Task extends Component {
 
     render = () => {
-        const { name, description } = this.props.task
-        const index = this.props.index
-        let id = `customCheck${index}`
+        const { title, description } = this.props.task
+        const id = this.props.id
 
         return (
                 <div className="task-container">
                     <div className="task-info">
-                        <div className="task-name">{name}</div>
+                        <div className="task-name">{title}</div>
                         <div className="task-description">{description}</div>
                     </div>
                     <div className="custom-control custom-checkbox">
-                        <input type="checkbox" className="custom-control-input custom-control-input-green" id={id} onClick={() => this.props.removeTask(index)}/>
+                        <input type="checkbox" className="custom-control-input custom-control-input-green" id={id} onClick={() => this.props.removeTask(id)}/>
                         <label className="custom-control-label" htmlFor={id}></label>
                     </div>
                 </div>

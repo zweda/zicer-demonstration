@@ -10,6 +10,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.security.InvalidParameterException;
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/tasks")
 public class TaskController {

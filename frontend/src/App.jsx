@@ -1,48 +1,48 @@
 import React, {Component, Fragment} from 'react';
 import TaskList from './components/TaskList';
-import './App.css';
 import TaskForm from './components/CreateTaskForm';
+import api from './api/TasksApi'
+import './App.css';
+
 
 class App extends Component {
-
-    state = {
-      data: [
-          {
-              name: 1,
-              description: "Hajasusfjacncsokancslnalknscawicapicnawkclnsclkawncialcnwlanwcilacilniseclanwc"
-          },
-          {
-              name: 2,
-              description: "Haj"
-          },
-          {
-              name:3,
-              description: "Haj"
-          }
-      ]
+    state =  {
+      data: []
     }
 
     constructor(props) {
       super(props)
       this.handleRemove.bind(this)
+      this.handleAddTask.bind(this)
     }
 
-    handleRemove = (index) => {
+    handleRemove = (id) => {
       const { data } = this.state
+      
+      api.deleteTask(id)
 
       this.setState({
           data: data.filter((task, i) => {
-              return index !== i
+              return task.id !== id
           })  
       })
     }
 
     handleAddTask = (data) => {
-      console.log("hereeeeeeeeeeeeeeeee")
-      this.setState({data: [...this.state.data, data]})
+      api.createTask(data).then(res => {
+        console.log(res)
+        this.setState({data: [...this.state.data, res]})
+      })
+    }
+
+    componentDidMount = () => {
+      api.getAllActiveTasks().then(res => {
+        this.setState({data: res})
+      })
     }
 
     render = () => {
+      console.log(this.state)
       return (
         <Fragment>
             <header className="navbar"><h1 className="my-1">Do!</h1></header>
